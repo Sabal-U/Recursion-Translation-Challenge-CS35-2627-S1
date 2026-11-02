@@ -1,13 +1,26 @@
-def print_even_recursive(number):
-    if number <= 0:
+def print_characters_recursive(text, index):
+    # BASE CASE
+    if index >= len(text):
         return
 
-    print(number)
+    # PROCESS
+    print(text[index])
 
-    print_even_recursive(number - 2)
+    # RECURSIVE STEP
+    print_characters_recursive(text, index + 1)
 
 
-print_even_recursive(10)
+def print_characters_iterative(text):
+    index = 0
 
-def print_even_iterative(number):
-    pass
+    while index < len(text):
+        print(text[index])
+        index += 1
+
+
+# Testing
+print("Recursive:")
+print_characters_recursive("Hello", 0)
+
+print("Iterative:")
+print_characters_iterative("Hello")
